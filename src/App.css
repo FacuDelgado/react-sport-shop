@@ -28,6 +28,38 @@
   color: #61dafb;
 }
 
+.card {
+  margin: 10px;
+}
+
+.counter-number {
+  padding: 5px;
+}
+
+.btn-group-card {
+  margin-top: 5px;
+  display: block!important;
+}
+
+.btn-group-card .btn{
+  font-size: 10px;
+}
+
+.item-list {
+  margin: 5%;
+  text-align: left;
+}
+
+.card-item {
+  padding: 0 10px;
+  border: 1px solid rgba(0,0,0,.125);
+  text-align: center;
+}
+
+.card-item img {
+  padding-top: 5px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
