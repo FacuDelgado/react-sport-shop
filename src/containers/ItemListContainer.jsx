@@ -1,24 +1,13 @@
 import React from 'react'
-import ItemCount from '../components/ItemCount'
+import ItemList from '../components/ItemList'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-
-const ItemListContainer = (props) => {
-  const onAdd = (param) => {
-    console.log('La cantidad comprada es: ' + {param})
-  }
-
+const ItemListContainer = () => {
   return (
     <>
     <div className='container item-list'>
       <div className='row'>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
-        <ItemCount  initial={1} stock={10} onAdd={onAdd}/>
+        <ItemList />
       </div>
     </div>
     </>
