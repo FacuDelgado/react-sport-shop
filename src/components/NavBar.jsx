@@ -28,17 +28,19 @@ const Navbar = () => {
               />
              <span>Sport Shop</span>
             </a>
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">About Us</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Categories</a>
-              </li>
-            </ul>
+            <div className="navbar-center-text">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Shoes</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Clothes</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <CartWidget/>
         </div>

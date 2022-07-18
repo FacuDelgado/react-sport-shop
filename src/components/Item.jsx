@@ -15,7 +15,7 @@ const Item = (item) => {
         <div className="card-body">
           <h5 className="card-title">{item.title}</h5>
           <h6>Price: ${item.price}</h6>
-          <p className="card-text">{item.description}</p>
+          <p className="card-text text-truncate">{item.description}</p>
           <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>
         </div>
       </div>

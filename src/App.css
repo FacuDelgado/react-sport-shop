@@ -30,6 +30,7 @@
 
 .card {
   margin: 10px;
+  min-height: 480px;
 }
 
 .counter-number {
@@ -58,8 +59,14 @@
   text-align: center;
 }
 
+h5.card-title {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
 .card-item img {
   padding-top: 5px;
+  min-height: 225px;
 }
 
 .loading-box {
@@ -69,6 +76,15 @@
 
 .loading-box strong{
   margin-right: 5px;
+}
+
+.navbar-center-text {
+  position: absolute;
+  margin-left: 40%;
+}
+
+p.card-text {
+  font-size: 0.8rem;
 }
 
 @keyframes App-logo-spin {
