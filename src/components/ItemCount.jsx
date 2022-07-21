@@ -26,15 +26,17 @@ const ItemCount = ({initial, stock, onAdd}) => {
 
   return (
     <>
+      <div className="itemCount">
         <div className="btn-group" role="group" aria-label="Basic example">
-          <button type="button" className="btn btn-secondary" onClick={subtrack}>-</button>
+          <button type="button" disabled={stock < 1} className="btn btn-secondary" onClick={subtrack}>-</button>
           <span className="counter-number"> {counter} </span>
-          <button type="button" className="btn btn-secondary" onClick={add}>+</button>
+          <button type="button" disabled={stock < 1} className="btn btn-secondary" onClick={add}>+</button>
         </div>
         <div className="btn-group btn-group-card">
           <button type="button" disabled={stock < 1} className="btn btn-lg btn-primary" onClick={onAdd}>Add to the Card</button>
           <p>Stock : {stock}</p>
         </div>
+      </div>
     </>
   )
 }

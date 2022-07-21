@@ -1,25 +1,14 @@
 import logo from '../assets/eshop-logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-expand-sm navbar-light bg-light">
         <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i className="fas fa-bars"></i>
-          </button>
-      
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <a className="navbar-brand mt-2 mt-lg-0" href="#">
+            <NavLink to={'/'} className="navbar-brand mt-2 mt-lg-0">
               <img
                 src={logo}
                 height="45"
@@ -27,17 +16,17 @@ const Navbar = () => {
                 loading="lazy"
               />
              <span>Sport Shop</span>
-            </a>
+            </NavLink>
             <div className="navbar-center-text">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Home</a>
+                  <NavLink to={'/'} className="nav-link">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Shoes</a>
+                  <NavLink to={'/category/1'} className="nav-link">Shoes</NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Clothes</a>
+                  <NavLink to={'/category/2'} className="nav-link">Clothes</NavLink>
                 </li>
               </ul>
             </div>

@@ -1,22 +1,18 @@
 import React from 'react'
-import ItemCount from './ItemCount'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from 'react-router-dom'
 
 const Item = (item) => {
-  const onAdd = (param) => {
-    console.log('New order for total ammount: ' + {param})
-  }
 
   return (
     <>
-    <div className="col-6 col-md-3 col-sm-2">
+    <div className="col-md-4 col-sm-6">
       <div className="card card-item">
-        <img src={item.imageUrl} className="card-img-top" alt="..." />
+        <Link to={`/item/${item.id}`}><img src={item.imageUrl} className="card-img-top" alt="..." /></Link>
         <div className="card-body">
-          <h5 className="card-title">{item.title}</h5>
+          <h5 className="card-title"><Link to={`/item/${item.id}`}>{item.title}</Link></h5>
           <h6>Price: ${item.price}</h6>
           <p className="card-text text-truncate">{item.description}</p>
-          <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>
         </div>
       </div>
     </div>

@@ -1,6 +1,10 @@
 import React from 'react'
+import ItemCount from './ItemCount'
 
 const ItemDetail = (item) => {
+    const onAdd = (param) => {
+        console.log('New order for total ammount: ' + {param})
+      }
   return (
     <>
     <div className="row">
@@ -19,7 +23,7 @@ const ItemDetail = (item) => {
                             <div className="sizes mt-4">
                                 <h6 className="text-uppercase">Price</h6> <label className="radio"> <span>${item.price}</span> </label>
                             </div>
-                            <div className="cart mt-4 align-items-center"> <button className="btn btn-primary text-uppercase mr-2 px-4">Add to cart</button> </div>
+                            <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>
                         </div>
                     </div>
     </div>

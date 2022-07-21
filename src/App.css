@@ -13,6 +13,14 @@
   }
 }
 
+.navbar-nav .nav-link.active {
+  border-radius: 0.3rem!important;
+  background: #CF5C3F;
+  color: #fff !important;
+  text-shadow: none !important;
+  font-style: italic;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -30,7 +38,7 @@
 
 .card {
   margin: 10px;
-  min-height: 480px;
+  min-height: 450px;
 }
 
 .counter-number {
@@ -42,8 +50,12 @@
   display: block!important;
 }
 
-.btn-group-card .btn {
-  font-size: 10px;
+.itemCount {
+  padding-top: 15px;
+}
+
+.itemCount .btn-group-card .btn {
+  font-size: 15px;
   border-top-right-radius: 4.8px!important;
   border-bottom-right-radius: 4.8px!important;
 }
@@ -95,3 +107,9 @@ p.card-text {
     transform: rotate(360deg);
   }
 }
+
+@media (min-width: 759px) { 
+  .card {
+    min-height : 350px
+  }
+ }
