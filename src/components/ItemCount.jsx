@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const ItemCount = ({initial, stock, onAdd}) => {
+function ItemCount ({initial, stock, addCart}) {
   const [counter, setCounter] = useState(initial)
 
   const add = () => {
@@ -23,6 +23,10 @@ const ItemCount = ({initial, stock, onAdd}) => {
       console.log('Min amount to subtrack')
     }
   }
+
+  function onAdd () {
+    addCart(counter);
+  };
 
   return (
     <>

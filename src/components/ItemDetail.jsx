@@ -1,10 +1,13 @@
-import React from 'react'
+import { useState } from 'react'
 import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
 
-const ItemDetail = (item) => {
-    const onAdd = (param) => {
-        console.log('New order for total ammount: ' + {param})
-      }
+function ItemDetail (item) {
+    const [itemsInCart, setItemsInCart] = useState();
+    
+    function addToCart(count) {
+        setItemsInCart(count)
+    }
   return (
     <>
     <div className="row">
@@ -23,7 +26,17 @@ const ItemDetail = (item) => {
                             <div className="sizes mt-4">
                                 <h6 className="text-uppercase">Price</h6> <label className="radio"> <span>${item.price}</span> </label>
                             </div>
-                            <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>
+                            {
+                                !itemsInCart
+                                    ?
+                                    <ItemCount initial={1} stock={item.stock} addCart={addToCart}/>
+                                    :
+                                    <>
+                                        <br />
+                                        <b><span>{itemsInCart} items added to the </span></b><br />
+                                        <Link className="btn btn-lg btn-primary" to="/cart">Cart</Link>
+                                    </>
+                            }
                         </div>
                     </div>
     </div>

@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ecommerce created for the React js training, from CoderHouse. It is a SPA website, that is listing a collection of products, with product detail view and cart features.  
+
+# Stack
+
+This project was crated with [Create React App](https://github.com/facebook/create-react-app), using bootstrap for styles.  
 
 ## Available Scripts
 
@@ -68,3 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Author
+
+- GitHub @FacuDelgado [https://github.com/FacuDelgado]

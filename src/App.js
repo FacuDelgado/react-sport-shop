@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/NavBar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer'
+import Cart from './components/Cart';
 import {Cloudinary} from "@cloudinary/url-gen";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/' element={<ItemListContainer />} />
           <Route exact path='/category/:categoryId' element={<ItemListContainer />} />
           <Route exact path='/item/:itemId' element={<ItemDetailContainer />} />
+          <Route exact path='/cart' element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>
