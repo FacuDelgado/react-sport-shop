@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
         <strong>Loading...  </strong>
         <div className="spinner-border ml-auto" role="status" aria-hidden="true"></div>
     </div>
-       : <ItemDetail title={item.title} description={item.description}
+       : <ItemDetail id={item.id} title={item.title} description={item.description}
             price={item.price} imageUrl={item.imageUrl} stock={item.stock} />
     }
     </>
