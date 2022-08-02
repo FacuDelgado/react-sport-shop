@@ -38,7 +38,6 @@
 
 .card {
   margin: 10px;
-  min-height: 450px;
 }
 
 .counter-number {
@@ -69,6 +68,7 @@
   padding: 0 10px;
   border: 1px solid rgba(0,0,0,.125);
   text-align: center;
+  min-height: 450px;
 }
 
 h5.card-title {
@@ -99,6 +99,22 @@ p.card-text {
   font-size: 0.8rem;
 }
 
+input.cart-quantity {
+  text-align: center;
+}
+
+.disalbeCartWidget {
+  cursor: no-drop;
+}
+
+.delete-button {
+  cursor: pointer;
+}
+
+.clean-cart {
+  margin-top: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -109,7 +125,7 @@ p.card-text {
 }
 
 @media (min-width: 759px) { 
-  .card {
+  .card-item {
     min-height : 350px
   }
  }

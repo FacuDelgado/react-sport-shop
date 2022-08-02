@@ -7,11 +7,12 @@ function CartContextProvider({ children }) {
     const [counterCart, setCounterCart] = useState(0)
 
     useEffect(() => {
+        setCounter(cart)
     }, [cart, counterCart])
 
     function addItem(count, item) {
         if (!cart.some(i => i.item.id == item.id)) {
-            cart.push({"item" : item, "count" : count})
+            cart.push({"item" : item, "count" : count, "totalCountPrice": (item.price * count)})
             setCart(cart)
             setCounter(cart)
         } else {
@@ -21,21 +22,27 @@ function CartContextProvider({ children }) {
 
     function clearCart() {
         setCart([])
-        setCounter(cart)
     }
 
     function removeItem(id) {
-        setCart(cart.filter(i => i.id !== id))
-        setCounter(cart)
+        setCart(cart.filter(i => i.item.id !== id))
     }
 
     function setCounter(cart) {
-        var totalItemCount = cart.reduce((accum,i) => accum + i.count, 0)
+        let totalItemCount = cart.reduce((accum,i) => accum + i.count, 0)
         setCounterCart(totalItemCount)
     }
 
+    function totalCountInCart() {
+        let sum = 0
+        cart.forEach((item) => {
+            sum += item.totalCountPrice
+        })
+        return sum
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, counterCart }}>
+        <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, counterCart, totalCountInCart }}>
             {children}
         </CartContext.Provider>
     )
