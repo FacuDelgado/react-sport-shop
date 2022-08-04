@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemDetail from '../components/ItemDetail'
-import { data } from '../utils/items'
 import { useParams } from 'react-router-dom';
+import {  doc, getDoc, getFirestore } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
   const [ item, setItem] = useState([])
   const { itemId } = useParams();
+  useEffect(()=>{
+    const db = getFirestore(); 
 
-    useEffect(()=>{
-        const getItem = new Promise ((res)=>{    
-            setTimeout(() =>{
-            res(data)
-    },1000)})
-    .then((data)=>{
-        setItem(data.find(e => e.id === parseInt(itemId)))
-      })
-    .catch((error)=>{
-            console.log(error)
-    })},[itemId])
+    const getItem = doc(db, "items", itemId);
+    getDoc(getItem).then((snapshot) => {
+      if (snapshot.exists()) {
+        setItem({ id: snapshot.id, ...snapshot.data()});
+      }
+    });
+  },[itemId])
 
   return (
     <>
