@@ -32,8 +32,13 @@ const Cart = () => {
         cart.map(i => 
           <CartItem key={i.item.id} item={i.item} count={i.count} partialCount={i.totalCountPrice} /> ) 
   :
-  <Link to={`/`}><button type="button" className="btn btn-primary btn-lg btn-block">Continue shopping</button></Link>
-
+      <div className="card">
+        <div className="card-body">
+        <p>There is no items in cart, click in following link to:</p>
+        <br/>
+        <Link to={`/`}><button type="button" className="btn btn-primary btn-lg btn-block">Continue shopping</button></Link>
+        </div>
+      </div>
         }
         {
           cart.length > 0 ?

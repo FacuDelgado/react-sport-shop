@@ -5,7 +5,9 @@ import { CartContext } from '../context/cartContext';
 
 function ItemDetail (item) {
     const [itemsInCart, setItemsInCart] = useState();
-    const {addItem}  = useContext(CartContext);
+    const {addItem, itemsInCartById}  = useContext(CartContext);
+
+    const itemAlreadyInCart = itemsInCartById(item.id)
 
     function addToCart(count) {
         setItemsInCart(count)
@@ -32,7 +34,7 @@ function ItemDetail (item) {
                             {
                                 !itemsInCart
                                     ?
-                                    <ItemCount initial={1} stock={item.stock} addCart={addToCart}/>
+                                    <ItemCount initial={1} stock={item.stock - itemAlreadyInCart} addCart={addToCart}/>
                                     :
                                     <>
                                         <br />

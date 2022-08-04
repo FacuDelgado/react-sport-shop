@@ -16,7 +16,20 @@ function CartContextProvider({ children }) {
             setCart(cart)
             setCounter(cart)
         } else {
-            console.log("Item already added!")
+            const objIndex = cart.findIndex(i => i.item.id == item.id);
+            if (objIndex === -1) {
+                return;
+            }
+            else { 
+                if (cart[objIndex].count + count > cart[objIndex].item.stock) {
+                    alert("Number of items exceed total stock!")
+                }
+                else {
+                    cart[objIndex].count += count
+                    setCart(cart)
+                    setCounter(cart)
+                }
+            }
         }
     }
 
@@ -41,8 +54,17 @@ function CartContextProvider({ children }) {
         return sum
     }
 
+    function itemsInCartById(id) {
+        let itemsCount = 0
+        let item = cart.find(i => i.item.id == id)
+        if (item) {
+            itemsCount = item.count
+        }
+        return itemsCount
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, counterCart, totalCountInCart }}>
+        <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, counterCart, totalCountInCart, itemsInCartById }}>
             {children}
         </CartContext.Provider>
     )
