@@ -2,21 +2,17 @@ import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemDetail from '../components/ItemDetail'
 import { useParams } from 'react-router-dom';
-import {  doc, getDoc, getFirestore } from 'firebase/firestore'
+import {  getItem } from '../utils/firestore';
 
 const ItemDetailContainer = () => {
   const [ item, setItem] = useState([])
   const { itemId } = useParams();
+  
   useEffect(()=>{
-    const db = getFirestore(); 
-
-    const getItem = doc(db, "items", itemId);
-    getDoc(getItem).then((snapshot) => {
-      if (snapshot.exists()) {
-        setItem({ id: snapshot.id, ...snapshot.data()});
-      }
-    });
-  },[itemId])
+    getItem(itemId)
+      .then( result => setItem(result))
+      .catch( err => console.log(err));
+  },[])
 
   return (
     <>

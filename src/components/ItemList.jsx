@@ -1,26 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Item from './Item'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useParams } from 'react-router-dom';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+import { useParams } from 'react-router-dom'
+import { getItems } from '../utils/firestore'
+
 const ItemList = () => {
     const [ items, setItems] = useState([])
     const { categoryId } = useParams();
     useEffect(()=>{
-        const db = getFirestore(); 
-
-        let itemsCollection = "";
-        
-        if (categoryId !== undefined) {
-          itemsCollection = query(collection(db, "items"), where("categoryId", "==", parseInt(categoryId, 10)));
-        }
-        else {
-          itemsCollection = collection(db, "items");
-        } 
-
-        getDocs(itemsCollection).then((snapshot) => {
-          setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data()})));
-        });
+      getItems(parseInt(categoryId, 10))
+          .then(result => setItems(result))
+          .catch(err => console.log(err));
       },[categoryId])
 
   return (
