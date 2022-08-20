@@ -7,6 +7,19 @@ Ecommerce created for the React js training, from CoderHouse. It is a SPA websit
 This project was crated with [Create React App](https://github.com/facebook/create-react-app), using bootstrap for styles. Also has integration with Cloudinay to store assets (images)
 Regarding database, this app is using Google Firebase.
 
+# Live website
+
+This app was deployed to have a live version in netlify host [Live App]([https://github.com/facebook/create-react-app](https://react-fdelgado-shop.netlify.app/)).
+
+# Demo
+(https://res.cloudinary.com/dctr9jrf9/image/upload/v1660964408/app-demo_l3iofb.gif)
+Demo:
+- Filter item list
+- Adding multiple items to the cart
+- Completing and submit order
+- Order number returned
+- Adding new items to the cart and cleaning cart
+
 ## Available Scripts
 
 In the project directory, you can run:
