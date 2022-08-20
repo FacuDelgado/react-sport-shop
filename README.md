@@ -4,7 +4,8 @@ Ecommerce created for the React js training, from CoderHouse. It is a SPA websit
 
 # Stack
 
-This project was crated with [Create React App](https://github.com/facebook/create-react-app), using bootstrap for styles.  
+This project was crated with [Create React App](https://github.com/facebook/create-react-app), using bootstrap for styles. Also has integration with Cloudinay to store assets (images)
+Regarding database, this app is using Google Firebase.
 
 ## Available Scripts
 
