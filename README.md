@@ -14,7 +14,7 @@ This app was deployed to have a live version in netlify host [Live App]([https:/
 # Demo
 
 ![App Demo]
-(https://res.cloudinary.com/dctr9jrf9/image/upload/v1660964408/app-demo_l3iofb.gif)
+(https://github.com/FacuDelgado/react-sport-shop/blob/main/app-demo.gif)
 
 Demo:
 - Filter item list
