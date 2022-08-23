@@ -12,9 +12,7 @@ Regarding database, this app is using Google Firebase.
 This app was deployed to have a live version in netlify host [Live App]([https://github.com/facebook/create-react-app](https://react-fdelgado-shop.netlify.app/)).
 
 # Demo
-
-![App Demo]
-(https://github.com/FacuDelgado/react-sport-shop/blob/main/app-demo.gif)
+![](https://github.com/FacuDelgado/react-sport-shop/blob/main/app-demo.gif)
 
 Demo:
 - Filter item list
