@@ -9,7 +9,7 @@ Regarding database, this app is using Google Firebase.
 
 # Live website
 
-This app was deployed to have a live version in netlify host [Live App](https://github.com/facebook/create-react-app](https://react-fdelgado-shop.netlify.app/).
+This app was deployed to have a live version in netlify host [Live App](https://react-fdelgado-shop.netlify.app/).
 
 # Demo
 ![](https://github.com/FacuDelgado/react-sport-shop/blob/main/app-demo.gif)
