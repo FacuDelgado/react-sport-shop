@@ -6,7 +6,8 @@ import Cart from './components/Cart';
 import {Cloudinary} from "@cloudinary/url-gen";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartContextProvider from './context/cartContext';
-
+import NotFound from './components/NotFound';
+ 
 function App() {
   // Create a Cloudinary instance and set your cloud name.
   const cld = new Cloudinary({
@@ -25,6 +26,7 @@ function App() {
             <Route exact path='/category/:categoryId' element={<ItemListContainer />} />
             <Route exact path='/item/:itemId' element={<ItemDetailContainer />} />
             <Route exact path='/cart' element={ <Cart /> } />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </div>
